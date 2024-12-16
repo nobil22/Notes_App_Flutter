@@ -36,7 +36,7 @@ class NoteItem extends StatelessWidget {
                       padding: const EdgeInsets.only(top: 16),
                       child: Text(
                         'Build your career with Mohamed Nabil',
-                        style: TextStyle(color: Colors.black.withOpacity(0.5), fontSize: 24,),
+                        style: TextStyle(color: Colors.black.withValues(alpha: 0.5), fontSize: 24,),
                       ),
                     ),
                     trailing: IconButton(
@@ -52,7 +52,7 @@ class NoteItem extends StatelessWidget {
                     padding: const EdgeInsets.only(top: 12,right: 30),
                     child: Text(
                       'mai 21,2024',
-                      style: TextStyle(color: Colors.black.withOpacity(0.5), fontSize: 24),
+                      style: TextStyle(color: Colors.black.withValues(alpha: 0.5), fontSize: 24),
                     ),
                   ),
                 ],

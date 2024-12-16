@@ -9,7 +9,7 @@ final IconData icon;
       height: 47,
       width: 47,
       decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.05),
+          color: Colors.white.withValues(alpha: 0.5),
           borderRadius: BorderRadius.circular(16)),
       child:  Center(
         child: Icon(
