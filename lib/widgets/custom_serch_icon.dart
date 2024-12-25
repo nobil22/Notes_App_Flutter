@@ -10,7 +10,7 @@ class CustomSerchIcon extends StatelessWidget {
       height: 47,
       width: 47,
       decoration: BoxDecoration(
-          color: Colors.white.withValues(alpha: 0.5),
+          color: Colors.white.withOpacity(0.5), //// change here
           borderRadius: BorderRadius.circular(16)),
       child: Center(
         child: IconButton(

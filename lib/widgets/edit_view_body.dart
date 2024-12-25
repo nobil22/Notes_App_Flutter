@@ -17,7 +17,7 @@ class EditViewBody extends StatefulWidget {
 }
 
 class _EditViewBodyState extends State<EditViewBody> {
-  String? title,subtitle;
+  String? title, subtitle;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -29,28 +29,26 @@ class _EditViewBodyState extends State<EditViewBody> {
           ),
           CustomAppbar(
             onPressed: () {
-              widget.note.title=title??widget.note.title;
-              widget.note.subtitle=subtitle??widget.note.subtitle;
+              widget.note.title = title ?? widget.note.title;
+              widget.note.subtitle = subtitle ?? widget.note.subtitle;
               widget.note.save();
               BlocProvider.of<NotesCubit>(context).FetchAllNotes();
               Navigator.pop(context);
-              
-
             },
             title: widget.note.title,
             icon: Icons.check,
           ),
           const SizedBox(height: 50),
-          CustomTextField ( 
-            
+          CustomTextField(
             onChanged: (p0) {
-              title=p0;
+              title = p0;
             },
-            hint: 'title',),
+            hint: 'title',
+          ),
           const SizedBox(height: 20),
-           CustomTextField(
+          CustomTextField(
             onChanged: (p0) {
-              subtitle=p0;
+              subtitle = p0;
             },
             hint: widget.note.subtitle,
             maxline: 5,
@@ -59,10 +57,8 @@ class _EditViewBodyState extends State<EditViewBody> {
           EditNotecoloresList(
             note: widget.note,
           ),
-
         ],
       ),
     );
   }
 }
-

@@ -10,7 +10,6 @@ class NoteItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-       
       onTap: () {
         Navigator.push(
           context,
@@ -43,7 +42,7 @@ class NoteItem extends StatelessWidget {
                   child: Text(
                     note.subtitle,
                     style: TextStyle(
-                      color: Colors.black.withValues(alpha: 0.5),
+                      color: Colors.black.withOpacity(0.5),
                       fontSize: 24,
                     ),
                   ),
@@ -65,7 +64,7 @@ class NoteItem extends StatelessWidget {
                 child: Text(
                   note.date,
                   style: TextStyle(
-                      color: Colors.black.withValues(alpha: 0.5), fontSize: 24),
+                      color: Colors.black.withOpacity(0.5), fontSize: 24),
                 ),
               ),
             ],

@@ -29,7 +29,6 @@ class _AddNoteFormState extends State<AddNoteForm> {
           children: [
             const SizedBox(height: 20),
             CustomTextField(
-              
               onSaved: (value) {
                 title = value;
               },
@@ -37,7 +36,6 @@ class _AddNoteFormState extends State<AddNoteForm> {
             ),
             const SizedBox(height: 10),
             CustomTextField(
-              
               onSaved: (value) {
                 subtitle = value;
               },
@@ -45,22 +43,28 @@ class _AddNoteFormState extends State<AddNoteForm> {
               maxline: 5,
             ),
             const SizedBox(height: 20),
-            ColoresListView(),
-             const SizedBox(height: 20),
+            ////////////////////////////////////////chnage here
+            ColoresListView(
+              onColorSelected: (int color) {},
+            ),
+            ////////////////////////////////////////chnage here
+            const SizedBox(height: 20),
             BlocBuilder<AddNoteCubit, AddNoteState>(
               builder: (context, state) {
                 return CustomButton(
-                  isloading: state is AddNoteLoading?true:false,
+                  isloading: state is AddNoteLoading ? true : false,
                   onTap: () {
                     if (formkey.currentState!.validate()) {
                       formkey.currentState!.save();
-                      var cuurentdate=DateTime.now();
-                      var formatedate=DateFormat('dd-mm-yyyy').format(cuurentdate);
+                      var cuurentdate = DateTime.now();
+                      var formatedate =
+                          DateFormat('dd-mm-yyyy').format(cuurentdate);
                       var noteModel = NoteModel(
-                          title: title!,
-                          subtitle: subtitle!,
-                          color: Colors.orange.value,
-                          date:formatedate,);
+                        title: title!,
+                        subtitle: subtitle!,
+                        color: Colors.orange.value,
+                        date: formatedate,
+                      );
                       BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
                     } else {
                       autovalidatemode = AutovalidateMode.always;

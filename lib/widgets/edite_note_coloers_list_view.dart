@@ -5,18 +5,19 @@ import 'package:note_app/widgets/colores_list_view.dart';
 
 class EditNotecoloresList extends StatefulWidget {
   const EditNotecoloresList({super.key, required this.note});
-final NoteModel note;
+  final NoteModel note;
   @override
   State<EditNotecoloresList> createState() => _EditNotecoloresListState();
 }
 
 class _EditNotecoloresListState extends State<EditNotecoloresList> {
-  late int currentindex ;
-@override
+  late int currentindex;
+  @override
   void initState() {
-    currentindex=kColoers.indexOf(Color(widget.note.color));
+    currentindex = kColoers.indexOf(Color(widget.note.color));
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -32,7 +33,7 @@ class _EditNotecoloresListState extends State<EditNotecoloresList> {
             child: GestureDetector(
               onTap: () {
                 currentindex = index;
-                widget.note.color=kColoers[index].value;
+                widget.note.color = kColoers[index].value;
                 setState(() {});
               },
               child: coloeritem(
@@ -46,4 +47,3 @@ class _EditNotecoloresListState extends State<EditNotecoloresList> {
     );
   }
 }
-

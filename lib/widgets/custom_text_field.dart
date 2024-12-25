@@ -1,7 +1,3 @@
-
-
-
-
 import 'package:flutter/material.dart';
 import 'package:note_app/constant.dart';
 
@@ -10,7 +6,8 @@ class CustomTextField extends StatelessWidget {
     super.key,
     required this.hint,
     this.maxline = 1,
-    this.onSaved, this.onChanged,
+    this.onSaved,
+    this.onChanged,
   });
   final String hint;
   final int maxline;
@@ -20,10 +17,8 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-       
       onSaved: onSaved,
-   onChanged: onChanged,
-
+      onChanged: onChanged,
       validator: (value) {
         if (value?.isEmpty ?? true) {
           return 'faield is requierd';

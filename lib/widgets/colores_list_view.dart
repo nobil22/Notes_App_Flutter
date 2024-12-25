@@ -26,7 +26,10 @@ class coloeritem extends StatelessWidget {
 }
 
 class ColoresListView extends StatefulWidget {
-  const ColoresListView({super.key});
+  const ColoresListView(
+      {super.key,
+      required void Function(int color)
+          onColorSelected}); ///////////change here
 
   @override
   State<ColoresListView> createState() => _ColoresListViewState();
@@ -50,7 +53,7 @@ class _ColoresListViewState extends State<ColoresListView> {
             child: GestureDetector(
               onTap: () {
                 currentindex = index;
-                BlocProvider.of<AddNoteCubit>(context).color=kColoers[index];
+                BlocProvider.of<AddNoteCubit>(context).color = kColoers[index];
                 setState(() {});
               },
               child: coloeritem(
